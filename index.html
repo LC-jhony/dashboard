@@ -9,11 +9,12 @@
 <body>
 <div class="bg-gradient-to-b from-indigo-600 via-indigo-600 to-indigo-600 pb-52 text-white shadow">
         <div x-data="{open: false}"
-            class="relative flex flex-col max-w-screen-xl px-6 mx-auto md:items-center md:justify-between md:flex-row">
-            <div class="flex flex-row items-center justify-between py-4">
+            class="relative flex flex-col max-w-screen-xl px-6 mx-auto md:flex-row md:items-center">
+            <!-- Top bar -->
+            <div class="flex items-center justify-between w-full py-4 md:py-4 md:w-auto">
                 <!-- LOGO -->
-                <div class="relative z-10 flex items-center gap-3">
-                    <div class="w-10 h-10 bg-indigo-700/40  rounded-xl flex items-center justify-center backdrop-blur-sm">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-indigo-700/40 rounded-xl flex items-center justify-center backdrop-blur-sm">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
@@ -21,36 +22,46 @@
                     </div>
                     <span class="text-2xl font-bold tracking-tight">VentasPro</span>
                 </div>
-                <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
-                    <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
-                        <path x-show="!open" fill-rule="evenodd"
-                            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-                            clip-rule="evenodd"></path>
-                        <path x-show="open" fill-rule="evenodd"
-                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                </button>
-            </div>
-            <nav :class="{'flex': open, 'hidden': !open}"
-                class="absolute left-0 right-0 top-full z-50 flex-col flex-grow hidden bg-indigo-600 pb-4 md:pb-0 md:relative md:flex md:justify-start md:flex-row text-white">
-                <a href="#" class="px-4 py-2 mt-2 text-sm font-semibold bg-indigo-700/40 rounded-lg">home</a>
-                <a href="#" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg">about</a>
-                <a href="#" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg">services</a>
-                <a href="#" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg">contact</a>
-                <div class="flex items-center space-x-4 md:ml-auto">
+                <!-- Móvil: Campana + Avatar + Hamburguesa -->
+                <div class="flex items-center space-x-4 md:hidden">
                     <button class="opacity-80 transition hover:opacity-100">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5" />
                         </svg>
-
                     </button>
-
                     <img src="https://i.pravatar.cc/40" class="h-9 w-9 rounded-full border-2 border-white" />
+                    <button class="rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+                        <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                            <path x-show="!open" fill-rule="evenodd"
+                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                                clip-rule="evenodd"></path>
+                            <path x-show="open" fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
                 </div>
+            </div>
+            <nav :class="{'flex': open, 'hidden': !open}"
+                class="absolute left-0 right-0 top-full z-50 flex-col hidden bg-indigo-600 pb-4 md:pb-0 md:px-6 md:ml-6 md:relative md:flex md:flex-1 md:items-center md:flex-row text-white">
+                <a href="#" class="px-4 py-2 mt-2 md:mt-0 md:py-2 text-sm font-semibold bg-indigo-700/40 rounded-lg">home</a>
+                <a href="#" class="px-4 py-2 mt-2 md:mt-0 md:py-2 text-sm font-semibold rounded-lg">about</a>
+                <a href="#" class="px-4 py-2 mt-2 md:mt-0 md:py-2 text-sm font-semibold rounded-lg">services</a>
+                <a href="#" class="px-4 py-2 mt-2 md:mt-0 md:py-2 text-sm font-semibold rounded-lg">contact</a>
             </nav>
+            <!-- Desktop: Campana + Avatar -->
+            <div class="hidden md:flex md:items-center md:space-x-4 md:py-4">
+                <button class="opacity-80 transition hover:opacity-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5" />
+                    </svg>
+                </button>
+                <img src="https://i.pravatar.cc/40" class="h-9 w-9 rounded-full border-2 border-white" />
+            </div>
         </div>
     </div>
     <!-- MAIN -->

@@ -4,9 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-  <link rel="stylesheet" crossorigin href="/assets/index-DHo5UOs7.css">
+  <link rel="stylesheet" crossorigin href="/assets/index-ClkAW068.css">
 </head>
 <body>
-    <h1 class="text-rose-500">Hello World</h1>
+<div class="bg-gradient-to-b from-indigo-600 via-indigo-600 to-indigo-600 pb-52 text-white shadow">
+        <div x-data="{open: false}"
+            class="relative flex flex-col max-w-screen-xl px-6 mx-auto md:flex-row md:items-center">
+            <!-- Top bar -->
+            <div class="flex items-center justify-between w-full py-4 md:py-0 md:w-auto">
+                <!-- LOGO -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-indigo-700/40 rounded-xl flex items-center justify-center backdrop-blur-sm">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                    </div>
+                    <span class="text-2xl font-bold tracking-tight">VentasPro</span>
+                </div>
+                <!-- Móvil: Campana + Avatar + Hamburguesa -->
+                <div class="flex items-center space-x-4 md:hidden">
+                    <button class="opacity-80 transition hover:opacity-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5" />
+                        </svg>
+                    </button>
+                    <img src="https://i.pravatar.cc/40" class="h-9 w-9 rounded-full border-2 border-white" />
+                    <button class="rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+                        <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                            <path x-show="!open" fill-rule="evenodd"
+                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                                clip-rule="evenodd"></path>
+                            <path x-show="open" fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Desktop: Campana + Avatar -->
+            <div class="hidden md:flex md:items-center md:space-x-4 md:ml-auto">
+                <button class="opacity-80 transition hover:opacity-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5" />
+                    </svg>
+                </button>
+                <img src="https://i.pravatar.cc/40" class="h-9 w-9 rounded-full border-2 border-white" />
+            </div>
+            <nav :class="{'flex': open, 'hidden': !open}"
+                class="absolute left-0 right-0 top-full z-50 flex-col flex-grow hidden bg-indigo-600 pb-4 md:pb-0 md:relative md:flex md:justify-start md:flex-row text-white">
+                <a href="#" class="px-4 py-2 mt-2 text-sm font-semibold bg-indigo-700/40 rounded-lg">home</a>
+                <a href="#" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg">about</a>
+                <a href="#" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg">services</a>
+                <a href="#" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg">contact</a>
+            </nav>
+        </div>
+    </div>
+    <!-- MAIN -->
+    <main class="mx-auto -mt-48 max-w-7xl px-6 pb-24">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-white/95">Dashboard</h1>
+            <div class="relative w-full sm:w-auto">
+                <input type="text" placeholder="Search..." class="w-full sm:w-64 rounded-lg bg-indigo-700/40
+                 py-2 pr-4 pl-10 text-sm text-white placeholder-white backdrop-blur-sm transition focus:w-full sm:focus:w-72 focus:bg-indigo-700/80 
+                 focus:ring-2 focus:ring-indigo-700/40 focus:outline-none" />
+                <svg class="absolute top-2.5 left-3 h-4 w-4 text-white" fill="none" stroke="currentColor"
+                    stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M21 21l-4.35-4.35M17 10a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </div>
+        </div>
+        <section class="rounded-2xl bg-white p-8 shadow-2xl shadow-indigo-900/10 h-96">
+            hello world!
+        </section>
+    </main>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.17.1/dist/cdn.min.js"></script>
+
 </body>
 </html>
