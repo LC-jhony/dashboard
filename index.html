@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="/src/input.css">
 </head>
 <body>
-<div class="bg-gradient-to-b from-indigo-600 via-indigo-600 to-indigo-600 pb-52 text-white shadow">
+<header class="bg-indigo-600 pb-52 text-white shadow">
         <div x-data="{open: false}"
-            class="relative flex flex-col max-w-screen-xl px-6 mx-auto md:flex-row md:items-center">
+            class="relative flex flex-col max-w-7xl px-6 mx-auto md:flex-row md:items-center">
             <!-- Top bar -->
             <div class="flex items-center justify-between w-full py-4 md:py-4 md:w-auto">
                 <!-- LOGO -->
@@ -45,7 +45,7 @@
                 </div>
             </div>
             <nav :class="{'flex': open, 'hidden': !open}"
-                class="absolute left-0 right-0 top-full z-50 flex-col hidden bg-indigo-600 pb-4 md:pb-0 md:px-6 md:ml-6 md:relative md:flex md:flex-1 md:items-center md:flex-row text-white">
+                class="absolute left-0 right-0 top-full z-50 flex-col bg-indigo-600 pb-4 md:pb-0 md:px-6 md:ml-6 md:relative md:flex md:flex-1 md:items-center md:flex-row text-white">
                 <a href="#" class="px-4 py-2 mt-2 md:mt-0 md:py-2 text-sm font-semibold bg-indigo-700/40 rounded-lg">home</a>
                 <a href="#" class="px-4 py-2 mt-2 md:mt-0 md:py-2 text-sm font-semibold rounded-lg">about</a>
                 <a href="#" class="px-4 py-2 mt-2 md:mt-0 md:py-2 text-sm font-semibold rounded-lg">services</a>
@@ -63,14 +63,14 @@
                 <img src="https://i.pravatar.cc/40" class="h-9 w-9 rounded-full border-2 border-white" />
             </div>
         </div>
-    </div>
+    </header>
     <!-- MAIN -->
     <main class="mx-auto -mt-48 max-w-7xl px-6 pb-24">
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
             <h1 class="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-white/95">Dashboard</h1>
             <div class="relative w-full sm:w-auto">
                 <input type="text" placeholder="Search..." class="w-full sm:w-64 rounded-lg bg-indigo-700/40
-                 py-2 pr-4 pl-10 text-sm text-white placeholder-white backdrop-blur-sm transition focus:w-full sm:focus:w-72 focus:bg-indigo-700/80 
+                 py-2 pr-4 pl-10 text-sm text-white backdrop-blur-sm transition focus:w-full sm:focus:w-72 focus:bg-indigo-700/80 
                  focus:ring-2 focus:ring-indigo-700/40 focus:outline-none" />
                 <svg class="absolute top-2.5 left-3 h-4 w-4 text-white" fill="none" stroke="currentColor"
                     stroke-width="2" viewBox="0 0 24 24">
